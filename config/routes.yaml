@@ -1,0 +1,6 @@
+app_mangaddict:
+  path: /mangaddict
+  methods: [GET]
+  controller: App\Controller\MangAddictController::index
+  defaults:
+    template: mangaddict/index.html.twig

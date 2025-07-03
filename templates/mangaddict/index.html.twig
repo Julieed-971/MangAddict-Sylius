@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/build/mangaddict/homepage.css">
+		<script src="{{ asset('build/mangaddict/homepage.js') }}"></script>
+		<title>MangAddict</title>
+	</head>
+	<body>
+		<header>
+			<div class="navbar">
+				<h1>Bonjour MangAddict</h1>
+				<div class="navbar-menu">
+					<button class="switch-color">&#x1F4A1</button>
+				</div>
+			</div>
+			<div class="greetings">
+				{{ greet }}
+			</div>
+		</header>
+	</body>
+</html>

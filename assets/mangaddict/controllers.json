@@ -1,0 +1,12 @@
+{
+  "controllers": {
+    "dark_mode": {
+      "enabled": true,
+      "fetch": "eager",
+      "autoimport": {
+        "default": "./controllers/dark_mode_controller.js"
+      }
+    }
+  },
+  "entrypoints": []
+}

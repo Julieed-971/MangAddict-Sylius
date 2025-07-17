@@ -1,23 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="/build/mangaddict/homepage.css">
-		<script src="{{ asset('build/mangaddict/homepage.js') }}"></script>
-		<title>MangAddict</title>
-	</head>
-	<body>
-		<header>
-			<div class="navbar">
-				<h1>Bonjour MangAddict</h1>
-				<div class="navbar-menu">
-					<button class="switch-color">&#x1F4A1</button>
-				</div>
-			</div>
+{% extends "@SyliusShop/shared/layout/base.html.twig" %}
+
+{% block stylesheets %}
+	{{ parent()}}
+
+	{% if app.request.attributes.get('_route') starts with 'app_mangaddict' %}
+		{{ encore_entry_link_tags('app-mangaddict-entry', null, 'app.mangaddict') }}
+	{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+	<div class="mangaddict_hero">
+		<div class="mangaddict_banner">
+			<h1>Bonjour MangAddict</h1>
+
 			<div class="greetings">
 				{{ greet }}
 			</div>
-		</header>
-	</body>
-</html>
+		</div>
+
+		{% if app.request.attributes.get('_route') starts with 'app_mangaddict' %}
+			{% include 'mangaddict/dark_mode/switch.html.twig' %}
+		{% endif %}
+	</div>
+{% endblock %}
+

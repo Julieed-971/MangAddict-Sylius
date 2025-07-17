@@ -9,3 +9,15 @@ sylius_twig_hooks:
             mangaddict_link:
                 template: 'mangaddict/header/menu/mangaddict_link.html.twig'
                 priority: 600
+
+    #     sylius_twig_hooks:
+    # hooks:
+    #     'sylius_shop.product.show.content.info.summary':
+    #         header:
+    #             template: '@SyliusShop/product/show/content/info/summary/header.html.twig'
+    #             priority: 500
+    #         average_rating:
+    #             template: '@SyliusShop/product/show/content/info/summary/average_rating.html.twig'
+    #             priority: 400
+    #         prices:
+    #             template: '@SyliusShop/product/show/content/info/summary/prices.html.twig'

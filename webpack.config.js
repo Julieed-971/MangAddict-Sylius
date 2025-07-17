@@ -71,27 +71,31 @@ const appAdminConfig = Encore.getWebpackConfig();
 appAdminConfig.externals = Object.assign({}, appAdminConfig.externals, { window: 'window', document: 'document' });
 appAdminConfig.name = 'app.admin';
 
-// MangAddict config
+Encore.reset();
+
+// MangAddict entry
 Encore
-    .setOutputPath('public/build/mangaddict')
-    .setPublicPath('/build/mangaddict')
-    .addEntry('homepage', './assets/mangaddict/js/homepage.js')
+    .setOutputPath('public/build/app/mangaddict')
+    .setPublicPath('/build/app/mangaddict')
+    .addEntry('app-mangaddict-entry', './assets/mangaddict/entrypoint.js')
     .addAliases({
         '@vendor': path.resolve(__dirname, 'vendor'),
     })
+    .enableSassLoader()
     .disableSingleRuntimeChunk()
-    .cleanupOutputBeforeBuild()
     .enableSourceMaps(!Encore.isProduction())
     .enableVersioning(Encore.isProduction())
-    .enableLessLoader()
-;
+    .enableStimulusBridge(mergeControllers(
+      'mangaddict',
+      [common_controllers, path.resolve(__dirname, './assets/mangaddict/controllers.json')]
+    ));
 
-const mangaddictConfig = Encore.getWebpackConfig();
-mangaddictConfig.name = 'mangaddict';
+const appMangaddictConfig = Encore.getWebpackConfig();
+appMangaddictConfig.name = 'app.mangaddict';
 
 Encore.reset();
 
-module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig, mangaddictConfig];
+module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig, appMangaddictConfig];
 
 /**
  * Merge controllers.json from multiple files into one and store in cache

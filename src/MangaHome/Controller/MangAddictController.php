@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Controller;
+namespace App\MangaHome\Controller;
 
-use App\Service\MangAddictService;
+use App\MangaHome\Service\MangAddictService;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Twig\Environment;
 
-class MangAddictController
+class MangAddictController extends AbstractController
 {
     private MangAddictService $mangAddictService;
     public function __construct(
@@ -19,8 +20,8 @@ class MangAddictController
     public function index(string $firstName = "Julie"): Response
     {
         $greet = $this->mangAddictService->greet($firstName);
-        return new Response($this->twig->render("mangaddict/index.html.twig", [
+        return $this->render("mangaddict/index.html.twig", [
             'greet' => $greet,
-        ]));
+        ]);
     }
 }

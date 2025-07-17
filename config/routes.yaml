@@ -1,6 +1,18 @@
 app_mangaddict:
   path: /mangaddict
   methods: [GET]
-  controller: App\Controller\MangAddictController::index
+  controller: App\MangaHome\Controller\MangAddictController::index
   defaults:
     template: mangaddict/index.html.twig
+
+# config/routes.yaml
+app_product_show:
+    path: /products/{slug}
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.product:showAction
+        _sylius:
+            template: AppStoreBundle:Product:show.html.twig # Use a custom template.
+            repository:
+                method: findForStore # Use a custom repository method.
+                arguments: [$slug] # Pass the slug from the url to the repository.

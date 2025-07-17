@@ -1,0 +1,53 @@
+$primary-color: #770737;
+$color-white: #FFF;
+$font-size-large: 2rem;
+$font-size-xlarge: 3rem;
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: $primary-color;
+    color: $color-white;
+
+    svg,
+    button span,
+    .nav-link {
+        color: $color-white;
+    }
+}
+
+body.dark-mode {
+    background-color: $color-white;
+    color: $primary-color;
+
+    svg,
+    button span,
+    .nav-link {
+        color: var(--bs-nav-link-color);
+    }
+}
+
+.mangaddict_hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px;
+
+    h1 {
+        font-size: $font-size-xlarge;
+    }
+    button {
+        width: fit-content;
+        height: fit-content;
+        font-size: $font-size-large;
+        background-color: #FFFFE3;
+        border: 1px solid #696969;
+        border-radius: 15px;
+    }
+}
+
+.greetings {
+    font-size: $font-size-xlarge;
+}

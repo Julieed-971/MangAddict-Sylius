@@ -18,6 +18,10 @@
 
 ###> symfony/framework-bundle ###
 /composer.lock
+/.env
+/.env.prod
+/.env.test
+/.env.test_cached
 /.env.*.local
 /.env.local
 /.env.local.php
@@ -61,3 +65,7 @@ phpstan.neon
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
+
+/.private-test.pem
+/config/jwt/public-test.pem
+/config/jwt/private-test.pem

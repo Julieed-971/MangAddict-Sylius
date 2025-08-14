@@ -84,7 +84,11 @@ Encore
     .enableSassLoader()
     .disableSingleRuntimeChunk()
     .enableSourceMaps(!Encore.isProduction())
-    .enableVersioning(Encore.isProduction());
+    .enableVersioning(Encore.isProduction())
+    .enableStimulusBridge(mergeControllers(
+      'mangaddict',
+      [common_controllers, path.resolve(__dirname, './assets/mangaddict/controllers.json')]
+    ));
 
 const appMangaddictConfig = Encore.getWebpackConfig();
 appMangaddictConfig.name = 'app.mangaddict';

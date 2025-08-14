@@ -1,3 +1,4 @@
-<div data-controller="dark_mode" >
-    <button data-action="click->dark_mode#switch" class="switch-color">&#x1F4A1</button>
+<div {{ stimulus_controller('dark-mode') }} >
+	<button {{ stimulus_action('dark-mode', 'switch', 'click') }} class="switch-color">&#x1F4A1</button>
+
 </div>

@@ -1,2 +1,2 @@
-import './controllers/dark_mode_controller.js'
+import './bootstrap.js'
 import './styles/mangaddict.scss'

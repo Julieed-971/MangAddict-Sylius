@@ -25,4 +25,13 @@
 		{% endif %}
 	</div>
 {% endblock %}
+{% block javascripts %}
+	{{ parent()}}
+
+
+	{% if app.request.attributes.get('_route') starts with 'app_mangaddict' %}
+		{{ encore_entry_script_tags('app-mangaddict-entry', null, 'app.mangaddict') }}
+	{% endif %}
+{% endblock %}
+
 

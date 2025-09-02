@@ -1,4 +1,6 @@
 security:
+    role_hierarchy:
+        ROLE_USER: ROLE_CUSTOMER
     providers:
         sylius_admin_user_provider:
             id: sylius.admin_user_provider.email_or_name_based

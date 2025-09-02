@@ -18,7 +18,6 @@
 
 ###> symfony/framework-bundle ###
 /composer.lock
-/.env
 /.env.prod
 /.env.test
 /.env.test_cached

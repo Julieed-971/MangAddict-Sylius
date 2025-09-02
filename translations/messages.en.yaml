@@ -1,3 +1,5 @@
 app:
   mangaddict_page:
     title: 'MangAddict'
+    greet: 'Hello MangAddict'
+    welcome: 'Welcome on MangAddict %firstName%'

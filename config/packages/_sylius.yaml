@@ -259,6 +259,7 @@ sylius_user:
             user:
                 classes:
                     model: App\Entity\User\ShopUser
+                    repository: App\Repository\UserRepository
         oauth:
             user:
                 classes:

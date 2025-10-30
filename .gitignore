@@ -68,3 +68,4 @@ phpstan.neon
 /.private-test.pem
 /config/jwt/public-test.pem
 /config/jwt/private-test.pem
+

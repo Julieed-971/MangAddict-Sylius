@@ -1,6 +1,4 @@
 security:
-    role_hierarchy:
-        ROLE_USER: ROLE_CUSTOMER
     providers:
         sylius_admin_user_provider:
             id: sylius.admin_user_provider.email_or_name_based
@@ -130,7 +128,7 @@ security:
         - { path: "%sylius.security.api_shop_account_regex%/.*", role: ROLE_USER }
         - { path: "%sylius.security.api_shop_route%/customers/token", role: PUBLIC_ACCESS }
         - { path: "%sylius.security.api_shop_regex%/.*", role: PUBLIC_ACCESS }
-        - { path: "^/mangaddict", role: ROLE_CUSTOMER }
+        - { path: "^/mangaddict", role: ROLE_USER }
 
 when@test: &security_test
     security:

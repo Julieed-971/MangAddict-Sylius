@@ -9,6 +9,15 @@ sylius_twig_hooks:
             mangaddict_link:
                 template: 'mangaddict/header/menu/mangaddict_link.html.twig'
                 priority: 600
+        'sylius_shop.account.profile_update.update.content.main.form':
+            grade:
+                template: 'account/grade.html.twig'
+                priority: 100
+        'sylius_admin.customer.update.content.form.sections.extra_information':
+            grade:
+                template: 'account/grade.html.twig'
+                priority: 0
+
 
     #     sylius_twig_hooks:
     # hooks:
